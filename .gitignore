@@ -1,0 +1,17 @@
+# Obsidian device-local configuration and UI state
+.obsidian/
+
+# Duplicate nested Vault retained locally for safety
+/知识体系/
+
+# Obsidian and OS temporary files
+.trash/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and temporary artifacts
+*.tmp
+*.temp
+*~
+
