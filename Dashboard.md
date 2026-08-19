@@ -16,6 +16,7 @@
 
 ## ❓ Active Questions
 
+- [[FasterGS 中 loss.backward 如何穿过自定义 CUDA rasterizer 把梯度传回 Gaussian 参数]] — 已掌握梯度按输入位置返回及错配后果；当前追问 `_Rasterize.apply()` 如何登记自定义 backward。
 - [[COLMAP 如何从图像匹配恢复三维结构并优化相机位姿]] — 已记录第一次闭卷解释；主问题暂时停在“两视图初始化”断点。
 - [[AI IP Studio 的 Harness 如何把一次内容任务变成可持续且可诊断的工作流]] — 主问题暂停；先建立一次 Harness 调用的完整顺序。
 
