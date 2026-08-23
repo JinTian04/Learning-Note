@@ -14,11 +14,35 @@
 
 ---
 
+## 🎯 当前 3DGS / PyTorch CUDA 主线
+
+当前目标不是泛学 3DGS 或 CUDA，而是掌握并能讲清 [[基于 Faster-GS 的快速训练优化与海光 DCU 适配]] 这条项目链：
+
+```text
+频率感知渐进分辨率
+→ 高斯增长目标预算与单轮速率上限
+→ Top-K clone/split
+→ Faster-GS Gaussian–Tile 光栅化
+→ PyTorch autograd 与 CUDA backend
+→ warp32 / wave64 异构适配
+→ 性能、画质、显存与长期稳定性证据
+```
+
+当前阶段：先解决 [[为什么渐进分辨率训练必须与高斯增长预算协同]]。FastGS 的 VCD/VCP/Compact Box 暂时只作为项目边界，不进入当前代码学习主线。
+
+---
+
 ## ❓ Active Questions
 
-- [[FasterGS 中 loss.backward 如何穿过自定义 CUDA rasterizer 把梯度传回 Gaussian 参数]] — 已掌握梯度按输入位置返回及错配后果；当前追问 `_Rasterize.apply()` 如何登记自定义 backward。
+- [[为什么渐进分辨率训练必须与高斯增长预算协同]] — 当前第一优先级；先建立像素量、高斯量、tile instance 与可学频率之间的因果链。
 - [[COLMAP 如何从图像匹配恢复三维结构并优化相机位姿]] — 已记录第一次闭卷解释；主问题暂时停在“两视图初始化”断点。
 - [[AI IP Studio 的 Harness 如何把一次内容任务变成可持续且可诊断的工作流]] — 主问题暂停；先建立一次 Harness 调用的完整顺序。
+
+---
+
+## ⏸ 3DGS 支撑问题
+
+- [[FasterGS 中 loss.backward 如何穿过自定义 CUDA rasterizer 把梯度传回 Gaussian 参数]] — 已掌握 backward 返回梯度与 forward 输入按位置对应；等进入 Faster-GS 后端阶段后，继续 `_Rasterize.apply()` 的 autograd 登记机制。
 
 ---
 
@@ -72,6 +96,7 @@
 
 ## 🧪 当前项目
 
+- [[基于 Faster-GS 的快速训练优化与海光 DCU 适配]] — 已有 30k 次 K100_AI 训练和 VMFault 根因定位证据；当前补齐算法—性能因果解释与 RTX 4090 同口径实验。
 - [[Insta360 X5 视频抽帧 COLMAP 重建实验]] — 已比较 `PINHOLE` 与 `OPENCV` 并调整焦距初值；因果诊断仍在进行。
 - [[DSH × Codex 的 AI 工作流与 IP 世界验证]] — 已明确 Studio 与 Harness 两条研究线；正在建立第一次闭卷架构基线。
 

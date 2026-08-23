@@ -1,6 +1,6 @@
 ---
 type: question
-status: active
+status: paused
 feynman_pass: false
 mastery_evidence: none
 video_value: none
@@ -110,8 +110,9 @@ created: 2026-08-19
 
 ## 项目关联
 
-- 源码路径：`D:\Code\fastergs\Fastergs改进版\3DGS_2607_dense_up`
-- FasterGS CUDA backend：`D:\Code\fastergs\Fastergs改进版\nerficg\src\Methods\FasterGS\FasterGSCudaBackend`
+- [[基于 Faster-GS 的快速训练优化与海光 DCU 适配]]
+- 源码路径：`F:\Learning Things\Fastergs改进版\3DGS_2607_dense_up`
+- FasterGS CUDA backend：`F:\Learning Things\Fastergs改进版\nerficg\src\Methods\FasterGS\FasterGSCudaBackend`
 
 ---
 
