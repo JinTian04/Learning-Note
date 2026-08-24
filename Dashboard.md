@@ -28,13 +28,13 @@
 → 性能、画质、显存与长期稳定性证据
 ```
 
-当前阶段：先解决 [[为什么渐进分辨率训练必须与高斯增长预算协同]]。FastGS 的 VCD/VCP/Compact Box 暂时只作为项目边界，不进入当前代码学习主线。
+当前阶段：主问题连续暴露出两个真实前置缺口，当前先解决 [[2D Gaussian 的 footprint 和逐像素权重分别是什么]]；通过后依次返回 [[一个 Gaussian 的 SH 与 opacity 能否在同一 footprint 内表达不同颜色]] 和 [[为什么渐进分辨率训练必须与高斯增长预算协同]]。FastGS 的 VCD/VCP/Compact Box 暂时只作为项目边界，不进入当前代码学习主线。
 
 ---
 
 ## ❓ Active Questions
 
-- [[为什么渐进分辨率训练必须与高斯增长预算协同]] — 当前第一优先级；先建立像素量、高斯量、tile instance 与可学频率之间的因果链。
+- [[2D Gaussian 的 footprint 和逐像素权重分别是什么]] — 当前前置问题；教学后需要闭卷区分 footprint、Gaussian 值、alpha、blend weight 与 transmittance。
 - [[COLMAP 如何从图像匹配恢复三维结构并优化相机位姿]] — 已记录第一次闭卷解释；主问题暂时停在“两视图初始化”断点。
 - [[AI IP Studio 的 Harness 如何把一次内容任务变成可持续且可诊断的工作流]] — 主问题暂停；先建立一次 Harness 调用的完整顺序。
 
@@ -42,6 +42,8 @@
 
 ## ⏸ 3DGS 支撑问题
 
+- [[一个 Gaussian 的 SH 与 opacity 能否在同一 footprint 内表达不同颜色]] — 暂停；完成 2D Gaussian footprint 子问题后返回。
+- [[为什么渐进分辨率训练必须与高斯增长预算协同]] — 父问题暂停；完成 SH/opacity/footprint 子问题后返回。
 - [[FasterGS 中 loss.backward 如何穿过自定义 CUDA rasterizer 把梯度传回 Gaussian 参数]] — 已掌握 backward 返回梯度与 forward 输入按位置对应；等进入 Faster-GS 后端阶段后，继续 `_Rasterize.apply()` 的 autograd 登记机制。
 
 ---
