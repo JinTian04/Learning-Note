@@ -1,6 +1,6 @@
 ---
 type: question
-status: active
+status: paused
 feynman_pass: false
 mastery_evidence: none
 video_value: possible
@@ -101,4 +101,4 @@ possible
 ## 学习结果
 
 - Feynman Pass: false
-- Remaining gaps: 等待教学后的闭卷复述。
+- Remaining gaps: 当前按用户要求暂停细节下钻；先建立 [[一轮 3DGS 训练如何从输入图像走到 Gaussian 参数更新]] 的宏观地图，之后再返回本题闭卷复述。
